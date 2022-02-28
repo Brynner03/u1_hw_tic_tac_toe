@@ -57,6 +57,7 @@ body {
     flex-direction: column;
 
 } */
+/* What is listed above ^^^^^^^ is most of my trial and errors for creating the square. Not all tho, there were a lot more! LOL */
 
 body {
     display: flex;
@@ -64,6 +65,15 @@ body {
     justify-content: center;
     align-items: center;
     background-color: cornflowerblue;
+}
+#tic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+  
 }
 .winre{
     margin-top: 25px;
@@ -99,6 +109,8 @@ body {
     border-bottom: 5px solid black; 
 }
 /*//////*/
+
+/* I tried to use this to let us now which one goes, but I couldn't get it correctly. */
 .hoverX:hover::after {
     content:'X';
     opacity: 40%;
@@ -111,6 +123,8 @@ body {
     font-size: 60px;
     
 }
+/**/
+
 /* This is to mark the line going across from the 3 in a row! */
 .line {
     background-color: purple;
@@ -151,6 +165,7 @@ body {
     opacity: 65%;
 }
 /*////////////////////////////////////////////////*/
+
 /* This is for the diagonal, from top-left to bottom-right */
 .diag-line1 {
     opacity: 65%;
@@ -186,6 +201,7 @@ body {
     font-family: sans-serif;
 
 }
+/* This is to set elements to disappear/ not show on screen. */
 .hide {
     display: none;
 }

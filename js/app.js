@@ -1,15 +1,15 @@
 // Global Variables Here
-const PlayerX = "X";
-const PlayerO = "O";
-const blocks = document.querySelectorAll(".in");
+const PlayerX = "X";//This is Player X's value.
+const PlayerO = "O";//This is Player O's value.
+const blocks = document.querySelectorAll(".in"); //This selects all of the boxes
 let turn = PlayerX;
 
 
 ////////////////////////////////
 // Functions For Game Logic Here
-const squareTat = Array(blocks.length);
+const squareTat = Array(blocks.length); //squareTat is the square as a whole.
 squareTat.fill(null);
-const done = document.getElementById("winrest");
+const done = document.getElementById("winrest"); //Changed winrest Id into done.
 const win = document.getElementById("win");
 const line = document.getElementById("line");
 const restart = document.getElementById("restart");
@@ -29,10 +29,12 @@ function blocksClick(event){
  if (blocks.innerText != "") {
      return;
  }
+      // If turn is player X, and they click. Please change it to O's turn
  if(turn === PlayerX) {
      blocks.innerText = PlayerX;
      squareTat[blockNumber -1] = PlayerX ;
      turn = PlayerO;
+     // If turn is player O, and they click. Please change it to X's turn
  }  else  {
     blocks.innerText = PlayerO;
     squareTat[blockNumber -1] = PlayerO ;
@@ -40,7 +42,7 @@ function blocksClick(event){
 }
 whoWon();
 }
-// Checks the winner
+// Checks the winner and adds the display
 function whoWon() {
     for (const winset of winSet) {
        const { set, lineClass } = winset;
@@ -76,8 +78,9 @@ function gameDone(winText){
 // This is for the restart button
 function refresh() {
     line.className = "line";
-    done.className = "hidden";
+    done.className = "hide";
     squareTat.fill(null);
+
     // This is going to set the tiles to blank
     blocks.forEach((blocks) => (blocks.innerText =""));
     //On refresh, turn goes back to X
