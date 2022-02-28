@@ -1,1 +1,194 @@
+/* body {
+    background-color:  rgba(255, 140, 100);
+    text-align: center;
+    justify-content: center;
 
+}
+
+
+.square {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100px;
+    justify-items: center;
+    text-align:center;
+   
+    
+}
+
+.in {
+    width:150px;
+    height: 150px;
+    background-color:aqua;
+    border: 2px solid black;
+
+
+} */
+
+/* 
+body { 
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.square {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 33% 33% 33%;
+    height: 100vh;
+    width: 100vw;
+    background-color: tomato;
+   
+}
+
+.in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 150px;
+    width: 150px;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+
+} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cornflowerblue;
+}
+.winre{
+    margin-top: 25px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration-style: wavy;
+
+}
+.square {
+    display: grid;
+    position: relative;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.in {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: rgb(128, 255, 126);
+}
+
+.border-right {
+    border-right: 5px solid black;
+}
+
+.borderL{
+    border-left: 5px solid black;
+}
+.borderDown {
+    border-bottom: 5px solid black; 
+}
+.line {
+    background-color: purple;
+    position: absolute;
+}
+.hoverX:hover::after {
+    content:'X';
+    opacity: 40%;
+    font-size: 60px;
+
+}
+.hoverO:hover::after {
+    content:'O';
+    opacity: 40%;
+    font-size: 60px;
+    
+}
+.line-1-top {
+    width: 100%;
+    height: 5px;
+    top: 15%;
+}
+.line-2-mid {
+    width: 100%;
+    height: 5px;
+    top: 48%;
+}
+.line-3-bottom {
+    width: 100%;
+    height: 5px;
+    top: 82%;
+}
+.line-1-vert{
+    left: 15%;
+    width:5px;
+    height:100%;
+    opacity: 65%;
+}
+.line-2-vert{
+    left: 48%;
+    width:5px;
+    height:100%;
+    opacity: 65%;
+}
+.line-3-vert{
+    left: 82%;
+    width:5px;
+    height:100%;
+    opacity: 65%;
+}
+/* This is for the diagonal, from top-left to bottom-right */
+.diag-line1 {
+    opacity: 65%;
+    transform: skewY(46deg);
+    height: 5px;
+    left: 5%;
+    top: 50%;
+    width: 90%;
+
+}
+/* This is for the diagonal, from top-right to bottom-left */
+
+.diag-line2 {
+    opacity: 65%;
+    transform: skewY(-45deg);
+    height: 5px;
+    left: 5%;
+    top: 50%;
+    width: 90%;
+
+}
+/* This is for the display */
+.winrest {
+    text-align: center;
+    padding: 50px;
+    width: 40%;
+    margin-top: 40px;
+
+}
+/* This is for the winning message */
+.win {
+    font-size: 62px;
+    font-family: sans-serif;
+
+}
+.hide {
+    display: none;
+}
+button {
+    padding: 10px;
+    border-radius: 30%;
+}
+button:hover {
+    background-color: rgb(128, 167, 126);
+    cursor: cell;
+}

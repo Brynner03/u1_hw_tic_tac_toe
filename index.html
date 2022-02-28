@@ -3,18 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tic-Tac-Toe</title>
+  <title>Brynners Tic Tac Toe!</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
 </head>
 <body>
   <!-- Build your game board, instructions, and score displays here! -->
+  
+  
+  
+  <h2>Tic Tac Toe</h2>
+  <!-- This is the square-->
+  <div class="square">
+    <div class="in border-right borderDown" data-index="1"></div>
+    <div class="in borderDown border-right" data-index="2"></div>
+    <div class="in borderDown" data-index="3"></div>
+    <div class="in borderDown border-right" data-index="4"></div>
+    <div class="in border-right borderDown" data-index="5"></div>
+    <div class="in borderDown" data-index="6"></div>
+    <div class="in border-right" data-index="7"></div>
+    <div class="in border-right" data-index="8"></div>
+    <div class="in" data-index="9"></div>
+    <div class='line' id="line"></div>
+  </div>
+  
+  
+  
+  <!-- This is the message that shows up when the game is done -->
+  <div class="winrest hide" id="winrest">
+<!--This is the winning message-->
+<div class="win" id="win">X has won!</div>
+    <!--This is the restart button-->
+    <button class="restart" id="restart">Restart</button>
 
-
-
-
-
-
-
+  </div>
 
 
   
