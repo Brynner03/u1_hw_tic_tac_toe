@@ -78,15 +78,16 @@ body {
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
 }
-
+/* This is for the X's and O's */
 .in {
     justify-content: center;
     display: flex;
     text-align: center;
     align-items: center;
+    font-size: 50px;
     color: rgb(128, 255, 126);
 }
-
+/* This is the border to create the boxes! */
 .border-right {
     border-right: 5px solid black;
 }
@@ -97,15 +98,12 @@ body {
 .borderDown {
     border-bottom: 5px solid black; 
 }
-.line {
-    background-color: purple;
-    position: absolute;
-}
+/*//////*/
 .hoverX:hover::after {
     content:'X';
     opacity: 40%;
     font-size: 60px;
-
+    
 }
 .hoverO:hover::after {
     content:'O';
@@ -113,6 +111,12 @@ body {
     font-size: 60px;
     
 }
+/* This is to mark the line going across from the 3 in a row! */
+.line {
+    background-color: purple;
+    position: absolute;
+}
+
 .line-1-top {
     width: 100%;
     height: 5px;
@@ -146,6 +150,7 @@ body {
     height:100%;
     opacity: 65%;
 }
+/*////////////////////////////////////////////////*/
 /* This is for the diagonal, from top-left to bottom-right */
 .diag-line1 {
     opacity: 65%;
@@ -189,6 +194,6 @@ button {
     border-radius: 30%;
 }
 button:hover {
-    background-color: rgb(128, 167, 126);
+    background-color: rgb(212, 210, 54);
     cursor: cell;
-}
+};

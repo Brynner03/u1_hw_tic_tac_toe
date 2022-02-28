@@ -16,7 +16,7 @@ const restart = document.getElementById("restart");
 
 ////////////////////////////////
 // Event Listeners Here
-
+restart.addEventListener('click', refresh);
 
 blocks.forEach((blocks) => blocks.addEventListener('click', blocksClick));
 function blocksClick(event){
@@ -40,18 +40,57 @@ function blocksClick(event){
 }
 whoWon();
 }
-// I can't get this to work.
+// Checks the winner
 function whoWon() {
-    for (const winSet of winSet){
-        console.log(winSet);
+    for (const winset of winSet) {
+       const { set, lineClass } = winset;
+       const blockV1 = squareTat[set[0] -1];
+       const blockV2 = squareTat[set[1] -1];
+       const blockV3 = squareTat[set[2] -1];
+
+       if(
+        blockV1 != null && 
+        blockV1 === blockV2 && 
+        blockV1 === blockV3
+        ) {
+           line.classList.add(lineClass);
+           gameDone(blockV1);
+           return;
+       }
     }
+    //This is the draw function, so that when every block is filled, and no winner is detected. This will show up
+    const squareFilled = squareTat.every((blocks) => blocks !== null);
+    if (squareFilled) {
+        gameDone(null);
+    }
+}
+//This is the winner/draw function
+function gameDone(winText){
+    let text = "Draw!";
+    if (winText != null) {
+        text = `${winText} has won!`;
+    }
+    done.className = "visible";
+    win.innerText = text;
+}
+// This is for the restart button
+function refresh() {
+    line.className = "line";
+    done.className = "hidden";
+    squareTat.fill(null);
+    // This is going to set the tiles to blank
+    blocks.forEach((blocks) => (blocks.innerText =""));
+    //On refresh, turn goes back to X
+    turn = PlayerX
+    win.innerText = "";
+    
 }
 
 
-//This displays who whon
+//This displays the strike on who whon
 const winSet = [
     //These are the rows
-    {set:[1,2,2], lineClass: "line-1-top"},
+    {set:[1,2,3], lineClass: "line-1-top"},
     {set:[4,5,6], lineClass: "line-2-mid"},
     {set:[7,8,9], lineClass: "line-3-bottom"},
     //These are the columns
@@ -64,5 +103,8 @@ const winSet = [
     {set:[1,5,9], lineClass: "diag-line1"},
     {set:[3,5,7], lineClass: "diag-line2"},
 ]
+
+
+
 
 ////////////////////////////////
